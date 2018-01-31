@@ -1,0 +1,157 @@
+﻿@model WeatherWise.Models.EmailModel
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        div div {
+            position: absolute;
+        }
+
+        .head {
+            top: 0;
+            left: 20px;
+            background-size: 50px;
+            width: 50px;
+            height: 58px;
+        }
+
+        .uppertorso {
+            top: 75px;
+            background-size: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .lowertorso {
+            background-size: 80px;
+            top: 160px;
+            left: 12px;
+            width: 80px;
+            height: 120px;
+        }
+
+        .footwear {
+            background-size: 100px;
+            top: 275px;
+            width: 100px;
+            height: 23px;
+        }
+
+        .gloves {
+            background-size: 110px;
+            top: 157px;
+            left: -4px;
+            width: 110px;
+            height: 25px;
+        }
+
+        .scarf {
+            background-size: 51px;
+            top: 82px;
+            left: 28px;
+            width: 51px;
+            height: 50px;
+        }
+        .umbrella {
+            background-size: 100px;
+            top: 33px;
+            left: 75px;
+            width: 100px;
+            height: 85px;
+        } 
+
+        .bg- {
+        }
+
+        .bg-stockinghat {
+            background-image: url('http://soarforward.com/weatherwise/images/beanie.png');
+        }
+
+        .bg-cap {
+            background-image: url('http://soarforward.com/weatherwise/images/cap.png');
+        }
+
+        .bg-cardigan {
+            background-image: url('http://soarforward.com/weatherwise/images/cardigan.png');
+        }
+
+        .bg-coat {
+            background-image: url('http://soarforward.com/weatherwise/images/coat.png');
+        }
+
+        .bg-flipflops {
+            background-image: url('http://soarforward.com/weatherwise/images/flipflops.png');
+        }
+
+        .bg-gloves {
+            background-image: url('http://soarforward.com/weatherwise/images/gloves.png');
+        }
+
+        .bg-jacket {
+            background-image: url('http://soarforward.com/weatherwise/images/jacket.png');
+        }
+
+        .bg-jacket2 {
+            background-image: url('http://soarforward.com/weatherwise/images/jacket2.png');
+        }
+
+        .bg-pants {
+            background-image: url('http://soarforward.com/weatherwise/images/pants.png');
+        }
+
+        .bg-scarf {
+            background-image: url('http://soarforward.com/weatherwise/images/scarf.png');
+        }
+
+        .bg-shoes {
+            background-image: url('http://soarforward.com/weatherwise/images/shoes.png');
+        }
+
+        .bg-shorts {
+            background-image: url('http://soarforward.com/weatherwise/images/shorts.png');
+        }
+
+        .bg-shortsleeve {
+            background-image: url('http://soarforward.com/weatherwise/images/shortsleeve.png');
+        }
+
+        .bg-sweater {
+            background-image: url('http://soarforward.com/weatherwise/images/sweater.png');
+        }
+
+        .bg-tshirt {
+            background-image: url('http://soarforward.com/weatherwise/images/tshirt.png');
+        }
+        .bg-umbrella {
+            background-image: url('http://soarforward.com/weatherwise/images/umbrella.png');
+        }
+    </style>
+</head>
+<body>  
+    <span style="display: block;">Current: @Model.High°F</span>
+    <span style="display: block;">Rain chance: @Model.PreciptationPercent%</span>
+    <span style="display: block;">Humidity: @Model.AverageHumidity</span>
+    <span style="display: block;">Barometric Pressure: @Model.BarometricPressure in</span>
+
+    <div style="position: relative;">
+        <div class="head bg- bg-@Model.Headwear.ToString().ToLower()"></div>
+        <div class="uppertorso bg- bg-@Model.UpperTorso.ToString().ToLower()"></div>
+        <div class="lowertorso bg- bg-@Model.LowerTorso.ToString().ToLower()"></div>
+        <div class="footwear bg- bg-@Model.Footwear.ToString().ToLower()"></div>
+        @*<div class="gloves bg- bg-@Model.Accessories.ToString().ToLower()"></div>
+        <div class="scarf bg- bg-@Model.Accessories.ToString().ToLower()"></div>*@
+        <div class="umbrella bg- bg-@(Model.IsUmbrellaNeeded ? "umbrella" : "")"></div>
+
+        @Model.Headwear.ToString().ToLower()<br />
+        @Model.UpperTorso.ToString().ToLower()<br />
+        @Model.LowerTorso.ToString().ToLower()<br />
+        @Model.Footwear.ToString().ToLower()<br />
+        @*@Model.Headwear.ToString().ToLower()
+        @Model.Accessories.ToString()*@
+        @(Model.IsUmbrellaNeeded ? "umbrella needed" : "umbrella not needed")
+
+    </div>
+</body>
+</html>
