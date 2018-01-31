@@ -72,7 +72,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTMLPage1.html" />
     <Content Include="images\beanie.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -140,7 +139,6 @@
     <Content Include="images\tshirt.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="index.html" />
     <Content Include="WeatherDefinitions.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
